@@ -17,14 +17,18 @@ var orm = {
         });
     },
     insertOne: function(table, col, val, cb) {
-        var queryString = "INSERT INTO ?? (??) VALUES ('?')";
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
         connection.query(queryString, [table, col, val], function (err, result) {
             if (err) throw err;
             cb(result);
         });
     },
-    updateOne: function(table, objColVals, state, cb) {
-        var queryString = "UPDATE ?? SET ?? WHERE ??"
+    updateOne: function(table, id, cb) {
+        var queryString = "UPDATE ?? SET ? WHERE ?";
+        connection.query(queryString, [table, {devoured: true}, {id: id}], function(err, result) {
+            if (err) throw err;
+            cb(result);
+        })
 
     }
 };
