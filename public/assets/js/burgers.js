@@ -8,7 +8,6 @@ $(function() {
 
     var newBurger = {
       burgerName: $("#bu").val().trim()
-      //burgerName: "Chicken Burger"
     };
     // Send the POST request.
     $.ajax("/api/burgers", {
@@ -17,7 +16,7 @@ $(function() {
     }).then(
       function() {
         console.log("created new burger");
-        // Reload the page to get the updated list
+        // Reload the page to get the updated list.
         location.reload();
       }
     );
@@ -25,16 +24,17 @@ $(function() {
 
   $(".eat-burger").on("click", function(event){
     var id = $(this).data("id");
-    console.log("ID:", id);
     var newDevouredState = {
       id: id
     };
+    //Send the PUT request.
     $.ajax("/api/burgers", {
       type: "PUT",
       data: newDevouredState
     }).then(
       function() {
         console.log("ate the burger")
+        //Reload the page to get the updated list.
         location.reload();
       }
     )

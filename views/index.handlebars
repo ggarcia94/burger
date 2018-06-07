@@ -1,34 +1,41 @@
 <div class="jumbotron">
-    <h1 class="display-4">Eat-Da-Burger</h1>
+    <h1 class="display-3">Eat-Da-Burger</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Bugers You Can Eat</h2>
+            <ul>
+                {{#each burgers}} 
+                    {{#unless devoured}} 
+                        {{>burgers/burger-block}} 
+                    {{/unless}} 
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Burgers you Ate!</h2>
+            <ul>
+                {{#each burgers}} 
+                    {{#if devoured}} 
+                        {{>burgers/burger-block}}
+                    {{/if}} 
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 </div>
 
 
-<h2>Bugers You Can Eat</h2>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{>burgers/burger-block}}
-        {{/unless}}
-    {{/each}}
-</ul>
 
-<h2>Burgers you Ate!</h2>
-
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{>burgers/burger-block}}
-        {{/if}} 
-    {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
+<h2 class="burger">Add a burger</h2>
 <form class="create-form">
     <div class="form-group">
         <label for="bu">Burger Name:</label>
         <input type="text" id="bu" name="name">
     </div>
 
-<button type="submit">Add Burger</button>
+    <button type="submit">Add Burger</button>
 </form>

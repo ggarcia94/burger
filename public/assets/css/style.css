@@ -8,12 +8,22 @@ li {
   font-weight: bold;
 }
 
-.create-update-form {
+.create-form {
   padding: 5px;
   margin: 5px;
   background: aqua;
+  text-align: center;
 }
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.burger {
+  text-align: center;
+}
+.jumbotron {
+  text-align: center;
+  background-image: url("../img/burger.jpeg");
+  color: black;
 }
