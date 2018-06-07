@@ -7,11 +7,9 @@ var burger = require("../models/burger.js");
 
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        //console.log(data);
         var hbsObject = {
             burgers: data
         };
-        //console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
@@ -23,7 +21,6 @@ router.post("/api/burgers", function(req,res) {
 });
 
 router.put("/api/burgers", function(req, res) {
-    //console.log("Debug:", req.body.id);
     burger.updateOne(req.body.id, function(data) {
         res.status(200).end();
     });
