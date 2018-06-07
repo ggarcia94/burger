@@ -1,4 +1,7 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="jumbotron">
+    <h1 class="display-4">Eat-Da-Burger</h1>
+</div>
+
 
 <h2>Bugers You Can Eat</h2>
 
@@ -11,13 +14,13 @@
 </ul>
 
 <h2>Burgers you Ate!</h2>
+
+<ul>
     {{#each burgers}}
         {{#if devoured}}
             {{>burgers/burger-block}}
         {{/if}} 
     {{/each}}
-<ul>
-
 </ul>
 
 <h2>Add a burger</h2>
